@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'projects/show'
+
+  get 'projects/create'
+
+  get 'projects/new'
+
+  get 'projects/update'
+
+  get 'projects/delete'
+
   resources :users, :only => [:show]
 
   devise_for :users
