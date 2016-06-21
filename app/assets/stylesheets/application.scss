@@ -23,3 +23,24 @@
    margin: 0 auto 30px;
    border-radius:100px;
  }
+
+  .preview-image {
+    width: 250px;
+  	height: 250px;
+  	border-radius: 150px;
+  	-webkit-border-radius: 150px;
+  	-moz-border-radius: 150px;
+  	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  }
+
+ .container .project .col-sm-4 .col-md-3 {
+   height: 450px;
+   max-height: 450px;
+
+ }
+
+ .thumbnail-links {
+   text-align: center;
+ }

@@ -3,20 +3,21 @@
 Member since : <%= @user.created_at.strftime("%b %d, %Y") %><br />
 Here you will see your latest Resume. You will be able to create and update then and catigorize them .
 
-
-<% @user.projects.each  do |project| %>
+<%= link_to "Add New Project" , new_project_path %>
 
 <div class="row">
-  <div class="col-sm-6 col-md-3">
+<% @user.projects.each  do |project| %>
+<div class="project" >
+  <div class="col-sm-4 col-md-3">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <%= image_tag project.preview.url(:large), class: 'preview-image' %>
       <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <h3> <%= project.title.truncate(23) %> </h3>
+        <p><%= project.description.truncate(65) %>
+        <p class="thumbnail-links"><%= link_to "Info" , project, class: 'btn btn-primary' %> <%= link_to "Github" , project.project_link, class: 'btn btn-primary', role: 'button' %>  </p>
       </div>
     </div>
   </div>
 </div>
- <%= link_to project.title , project %>
  <% end %>
+ </div>
