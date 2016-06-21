@@ -1,3 +1,22 @@
-Hello, <%= @user.full_name %>
 
+<%= image_tag @user.avatar.url(:thumb), :class => "profile-photo" %></br / >
+Member since : <%= @user.created_at.strftime("%b %d, %Y") %><br />
 Here you will see your latest Resume. You will be able to create and update then and catigorize them .
+
+
+<% @user.projects.each  do |project| %>
+
+<div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+ <%= link_to project.title , project %>
+ <% end %>

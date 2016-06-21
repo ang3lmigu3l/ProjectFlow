@@ -1,8 +1,10 @@
 class ProjectsController < ApplicationController
   def show
+    @project = Project.find(params[:id])
   end
 
   def create
+    
   end
 
   def new
@@ -11,6 +13,6 @@ class ProjectsController < ApplicationController
   def update
   end
 
-  def destroy 
+  def destroy
   end
 end
