@@ -16,8 +16,13 @@
   </div>
 
   <div class="field" >
+    <%= f.label :title %>
+    <%= f.text_field :title , autofocus: true, class: 'form-control', placeholder: "Project Title "%>
+  </div>
+
+  <div class="field" >
     <%= f.label :description  %>
-    <%= f.text_area :description, rows: 5 , autofocus: true, class: 'form-control', placeholder: "Descrition of Project" %>
+    <%= f.text_field :description , autofocus: true, class: 'form-control', placeholder: "Short Project description " %>
   </div>
 
   <div class="field" >

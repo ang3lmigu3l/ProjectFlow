@@ -1,20 +1,28 @@
-<div class="container" >
+<div class="content" >
 <br />
 
 
 <div class="media">
-  <center> <%= image_tag @project.preview.url(:large) %></center>
+  <center> <%= image_tag @project.preview.url(:large), class: 'project-image' %></center>
   <div class="media-body">
     <h2 class="media-heading">
-     <%= @project.title %>
-     <% if !@project.project_link == nil %> <%= link_to "Githib" , @project.project_link , class: 'btn btn-primary'%>
+     <center><%= @project.title %>
+     <% unless @project.project_link == nil %> <%= link_to "Githib" , @project.project_link , class: 'btn btn-primary'%><br / >
      <% end %>
-   </h2>
-    <small>
-      Started : <%= @project.date_started %>
-    </small>
+   </center>
+     </h2>
+     <center>
+     <%= @project.description %>
+     </center>
 
-    <%= markdown(@project.description) %>
+   <center>
+    <small>
+     <%= @project.date_started.strftime(" %B %d %Y") %>
+    </small>
+  </center>
+
+
+    <%= markdown (@project.body) %>
   </div>
 </div>
 

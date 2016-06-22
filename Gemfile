@@ -12,7 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
-gem 'redcarpet', '~> 3.0.0'
+gem 'redcarpet', '~> 3.2.2'
+gem 'pygments.rb', '~> 0.6.0'
 
 group :development, :test do
   gem 'byebug'

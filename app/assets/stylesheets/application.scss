@@ -16,31 +16,58 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {background-color:#fff}
 
- .profile-photo {
+.profile-photo {
    display:block;
    max-width:150px;
    margin: 0 auto 30px;
    border-radius:100px;
- }
+}
 
-  .preview-image {
-    width: 250px;
-  	height: 250px;
+.preview-image {
+    width: 200px;
+  	height: 200px;
   	border-radius: 150px;
   	-webkit-border-radius: 150px;
   	-moz-border-radius: 150px;
   	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-  }
+}
 
- .container .project .col-sm-4 .col-md-3 {
-   height: 450px;
-   max-height: 450px;
+.project-image { width: 50%;}
 
- }
 
- .thumbnail-links {
+.thumbnail-links {
    text-align: center;
- }
+}
+
+.thumbnail {
+  padding: 10px;
+  height: 350px;
+
+}
+.thumbnail a {
+  color: #778899;
+}
+.caption {
+  color:#23282d;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+
+
+.container {
+  background-color:#fff;
+  max-width: 100%;
+  padding-bottom: 30px;
+  border-style:solid;
+  border-width: 0 1px 1px 1px;
+  border-color: #607d8b;
+  border-radius: 5px;
+}
+@import 'pygments';
