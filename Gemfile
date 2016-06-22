@@ -14,7 +14,8 @@ gem 'bootstrap-sass'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'redcarpet', '~> 3.2.2'
 gem 'pygments.rb', '~> 0.6.0'
-
+gem 'font-awesome-sass'
+gem 'bootstrap-social-rails'
 group :development, :test do
   gem 'byebug'
 end

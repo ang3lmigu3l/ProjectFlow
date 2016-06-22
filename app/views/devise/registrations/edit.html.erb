@@ -22,6 +22,29 @@
   </div>
 
   <div class="field" >
+    <%= f.label :Github %> <br />
+    <%= f.text_field :github, autofocus: true, placeholder: 'http://github.com/username' %>
+  </div>
+
+  <div class="field" >
+    <%= f.label :facebook %> <br />
+    <%= f.text_field :facebook, autofocus: true, placeholder: 'http://facebook.com/' %>
+  </div>
+
+  <div class="field" >
+    <%= f.label :Linkedin %> <br />
+    <%= f.text_field :linkedin, autofocus: true, placeholder: 'http://Linkedin.com/' %>
+  </div>
+
+  <div class="field" >
+    <%= f.label :Twitter %> <br />
+    <%= f.text_field :twitter, autofocus: true, placeholder: 'http://twitter.com/username' %>
+  </div>
+
+
+
+
+  <div class="field" >
     <%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Female" %>
     <%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %>
   </div>

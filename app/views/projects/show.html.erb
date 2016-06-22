@@ -3,30 +3,25 @@
 
 
 <div class="media">
-  <center> <%= image_tag @project.preview.url(:large), class: 'project-image' %></center>
+  <center> <%= image_tag @project.preview.url(:large), class: 'project-image' %>
+  <h1 ><%= @project.title %> </h1>
+  <% unless @project.project_link == nil %>
+    <%= link_to @project.project_link , class: 'btn btn-social-social btn-github' do %>
+     <span class="fa fa-github"></span>
+    <% end %>
+  <% end %> <br / >
+  <%= @project.description %><br />
+ <small>
+  <%= @project.date_started.strftime(" %B %d %Y") %>
+ </small>
+</center>
+
   <div class="media-body">
-    <h2 class="media-heading">
-     <center><%= @project.title %>
-     <% unless @project.project_link == nil %> <%= link_to "Githib" , @project.project_link , class: 'btn btn-primary'%><br / >
-     <% end %>
-   </center>
-     </h2>
-     <center>
-     <%= @project.description %>
-     </center>
-
-   <center>
-    <small>
-     <%= @project.date_started.strftime(" %B %d %Y") %>
-    </small>
-  </center>
-
-
+    <div class= "col-md-10 col-md-offset-1" >
     <%= markdown (@project.body) %>
+    </div>
   </div>
-</div>
-
-
-<%= link_to "Update", edit_project_path, class: 'btn btn-primary' %>
-<%= link_to "Delete", project_path(@project) ,  method: 'delete', class: 'btn btn-warning',data: { confirm: 'Are you sure you want to delete this Project?' } %>
+  <%= link_to "Update", edit_project_path, class: 'btn btn-primary' %>
+  <%= link_to "Delete", project_path(@project) ,  method: 'delete', class: 'btn btn-warning',data: { confirm: 'Are you sure you want to delete this Project?' } %>
+  </div>
 </div>
