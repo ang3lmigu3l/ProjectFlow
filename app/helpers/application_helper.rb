@@ -20,7 +20,7 @@ module ApplicationHelper
   def social_icon_helper(user, service)
     if user.respond_to?(service) && !user.send(service).nil?
       link_to user.send(service), class: "btn btn-social-social btn-#{service}" do
-        content_tag(:span, class: "fa fa-#{service}")
+        content_tag(:span, nil , class: "fa fa-#{service}")
       end
     end
   end
