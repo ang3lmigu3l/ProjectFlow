@@ -16,8 +16,10 @@ gem 'redcarpet', '~> 3.2.2'
 gem 'pygments.rb', '~> 0.6.0'
 gem 'font-awesome-sass'
 gem 'bootstrap-social-rails'
+
 group :development, :test do
   gem 'byebug'
+  gem 'faker', '~> 1.6', '>= 1.6.3'
 end
 
 group :development do
