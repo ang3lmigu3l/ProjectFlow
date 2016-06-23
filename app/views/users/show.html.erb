@@ -1,21 +1,18 @@
 
 <%= image_tag @user.avatar.url(:thumb), :class => "profile-photo" %></br / >
-
-#needs to be DRYed out
-<% %i(github facebook twitter linkedin ).each do |service| %>
-  <%= social_icon_helper(@user, service) %>
-<% end %>
-
-Member since : <%= @user.created_at.strftime("%b %d, %Y") %><br />
-Here you will see your latest Resume. You will be able to create and update then and catigorize them .
-
-<%= link_to "Add New Project" , new_project_path %>
+  <div class= "project-info" >
+    <% %i(github facebook twitter linkedin ).each do |service| %>
+      <%= social_icon_helper(@user, service) %>
+    <% end %>
+  </div>
 
 <div class="row row-centered">
 <% @user.projects.each  do |project| %>
   <div class="col-xs-6 col-sm-4 col-md-3 col-offset-1">
     <div class="thumbnail">
-      <%= image_tag project.preview.url(:small), class: 'preview-image' %>
+      <%=link_to project do %>
+        <%= image_tag project.preview.url(:small), class: 'preview-image' %>
+        <% end %>
       <div class="caption">
         <h4> <%= link_to project.title.truncate(15), project %> </h4>
         <p><%= project.description.truncate(65) %></p>
