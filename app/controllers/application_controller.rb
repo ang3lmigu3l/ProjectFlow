@@ -12,4 +12,5 @@ before_filter :configure_permitted_parameters, if: :devise_controller?
      devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:avatar, :fist_name, :last_name, :is_female, :date_of_birth , :email, :github, :facebook, :twitter, :linkedin,  :password, :password_confirmation, :current_password) }
   end
 
+
 end

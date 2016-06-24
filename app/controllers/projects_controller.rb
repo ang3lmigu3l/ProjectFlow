@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+
+  before_action :authenticate_user!, :only => [:create , :new , :edit ]
+  before_action :authorized_user , :only => [:create, :edit , :destroy]
+
   def show
     @project = project_params
   end
@@ -40,9 +44,32 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project = project_params
+    @user = current_user
+
+    if @project.destroy
+      flash[:notice] = "#{@project.title} was deleted"
+      redirect_to @user
+    else
+      flash[:alert] = "Project was not deleted "
+      redirect_to @project_path
+    end
+
+
+
+
   end
 
   private
+
+  def authorized_user
+    project = Project.find(params[:id])
+
+    unless project.user_id == current_user.id
+      flash[:alert] = "Sorry you cannot do that!"
+      redirect_to project_path
+    end
+  end
 
   def project_params
     Project.find(params[:id])
