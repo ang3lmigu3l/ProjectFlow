@@ -24,6 +24,12 @@ module ApplicationHelper
       end
     end
   end
-  
+
+  def code_type_label(project)
+    content_tag(:span, "#{project.code_type}".titleize, class: "label label-#{project.code_type}")
+  end
+
+
+
 
 end

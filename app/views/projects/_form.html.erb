@@ -12,6 +12,11 @@
     <%= f.label :description  %>
     <%= f.text_field :description , autofocus: true, class: 'form-control', placeholder: "Short Project description " %>
   </div>
+
+  <div class="form-group">
+    <%= f.select(:code_type, Project.code_types.keys.map {|type| [type.titleize,type]}) %>
+  </div>
+
   <div class="field" >
     <%= f.label :body  %>
     <%= f.text_area :body, rows: 10 , autofocus: true, class: 'form-control', placeholder: "What does your project do ? What problems did you encounter?" %>

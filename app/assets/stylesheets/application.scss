@@ -82,27 +82,38 @@ body {background-color:#fff}
   border-color: #607d8b;
   border-radius: 5px;
 }
-@import 'pygments';
 
-// flash msg
-
-.flash-message {
-  &.error {
-    border: solid 4px #900;
-          background-color: #FF6565;
-        }
-  &.notice {
-    border: solid 4px #26722D;
-          background-color: #A4E7A0;
-        }
-  color: black;
-  z-index: 999;
-  position: fixed;
-  font-weight: bold;
-  width: 96%;
-  margin: 20px;
-        p {
-                font-size: 110%;
-                margin: 15px 0;
-        }
+.label-javascript {
+  background-color:#E4C11B;
 }
+
+.label-php {
+  background-color:#757DB3;
+}
+
+.label-ruby {
+  background-color:#E70012;
+}
+
+.label-rails {
+  background-color:#951929;
+}
+
+.label-css {
+  background-color:#0057AE;
+}
+
+.label-python {
+  background-color:#1E3C5C;
+}
+
+.label-java {
+  background-color:#FF8A00;
+}
+.label-other {
+  background-color:#00AFCC;
+}
+
+
+
+@import 'pygments';

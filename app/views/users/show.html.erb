@@ -16,6 +16,7 @@
       <div class="caption">
         <h4> <%= link_to project.title.truncate(15), project %> </h4>
         <p><%= project.description.truncate(65) %></p>
+        <%= code_type_label(project)%>
       </div>
     </div>
   </div>

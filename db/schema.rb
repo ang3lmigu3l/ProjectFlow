@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622083354) do
+ActiveRecord::Schema.define(version: 20160625052332) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160622083354) do
     t.datetime "preview_updated_at"
     t.string   "project_link"
     t.string   "body"
+    t.integer  "code_type"
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
