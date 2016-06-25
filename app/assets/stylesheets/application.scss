@@ -18,6 +18,7 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "bootstrap-social";
+ @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
 
 
 body {background-color:#fff}
@@ -114,6 +115,13 @@ body {background-color:#fff}
   background-color:#00AFCC;
 }
 
+// index main header
+
+#main_header {
+  text-align: center ;
+  font-family: 'Share Tech Mono', ;
+  font-size: 3.5em;
+}
 
 
 @import 'pygments';
