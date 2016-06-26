@@ -1,10 +1,27 @@
-
-<%= image_tag @user.avatar.url(:thumb), :class => "profile-photo" %></br / >
-  <div class= "project-info" >
-    <% %i(github facebook twitter linkedin ).each do |service| %>
-      <%= social_icon_helper(@user, service) %>
-    <% end %>
+<div class= "user-info">
+  <div class= "col-md-3 col-md-offset-1">
+    <center>
+  <%= image_tag @user.avatar.url(:thumb), :class => "profile-photo" %></br / >
+    </center>
+    <div class= "user-links" >
+      <% %i(github facebook twitter linkedin ).each do |service| %>
+        <%= social_icon_helper(@user, service) %>
+      <% end %>
+    </div>
   </div>
+  <div class="col-md-7">
+  <p> asdfasdfasdf asdfa sdfasdfasdf sd fasdf asdfa sdfa sdf sfa sfas</br>
+    asdfasdf asdfasdfas dfasdfasdfasdfasdfasdfasdf asdf  asdfasdfasd</br>
+    asdfasdf asdfasdfas dfasdfasdfasdfasdfasdfasdf asdf  asdfasdfasd
+    asdfasdf asdfasdfas dfasdfasdfasdfasdfasdfasdf asdf  asdfasdfasd</p>
+    <p> asdfasdfasdf asdfa sdfasdfasdf sd fasdf asdfa sdfa sdf sfa sfas</br>
+      asdfasdf asdfasdfas dfasdfasdfasdfasdfasdfasdf asdf  asdfasdfasd</br>
+      asdfasdf asdfasdfas dfasdfasdfasdfasdfasdfasdf asdf  asdfasdfasd
+      asdfasdf asdfasdfas dfasdfasdfasdfasdfasdfasdf asdf  asdfasdfasd</p>
+
+</div>
+
+</div>
 
 <div class="row row-centered">
 <% @user.projects.each  do |project| %>

@@ -24,10 +24,10 @@
 body {background-color:#fff}
 
 .profile-photo {
-   display:block;
    max-width:150px;
    margin: 0 auto 30px;
    border-radius:100px;
+   align: center;
 }
 
 .default-small{
@@ -69,9 +69,10 @@ body {background-color:#fff}
     text-align:center;
 }
 
-.project-info {
+.user-links {
   text-align: center;
-  padding-bottom: 20px;
+  margin-bottom: 5px;
+
 }
 
 .container {
@@ -115,6 +116,22 @@ body {background-color:#fff}
   background-color:#00AFCC;
 }
 
+.user-info {
+  display: block;
+  float: left;
+  position: relative;
+  width: 100%;
+  background-color: #F9F9F9;
+  padding: 5px;
+  margin-bottom: 30px;
+  border: 1px solid #E0E0E0 ;
+  border-radius: 5px;
+}
+//bootstrap overwrite
+.col-md-7 {
+  margin-top: 15px;
+  overflow: auto;
+}
 // index main header
 
 #main_header {
