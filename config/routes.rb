@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :users, :only => [:show]
 
   root 'welcome#index'
+    get '/profile' => 'users#profile'
 
 end

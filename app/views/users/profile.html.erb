@@ -1,0 +1,36 @@
+<div class= "user-info">
+  <div class= "col-md-3 col-md-offset-1">
+    <center>
+  <%= image_tag @user.avatar.url(:thumb), :class => "profile-photo" %></br / >
+    </center>
+    <div class= "user-links" >
+      <% %i(github facebook twitter linkedin ).each do |service| %>
+        <%= social_icon_helper(@user, service) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <%= @user.bio %>
+  </div>
+
+</div>
+
+<div class="row row-centered">
+<% @user.projects.each  do |project| %>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-offset-1">
+    <div class="thumbnail">
+      <%=link_to project do %>
+        <%= image_tag project.preview.url(:small), class: 'preview-image' %>
+        <% end %>
+      <div class="caption">
+        <h4> <%= link_to project.title.truncate(15), project %> </h4>
+        <p><%= project.description.truncate(65) %></p>
+        <%= code_type_label(project)%>
+      </div>
+    </div>
+  </div>
+
+
+
+ <% end %>
+ </div>
