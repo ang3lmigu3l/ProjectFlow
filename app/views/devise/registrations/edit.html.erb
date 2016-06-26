@@ -42,17 +42,23 @@
   </div>
 
 
-
-
   <div class="field" >
     <%= f.check_box :is_female, {}, true %> <%= f.label :is_female, "Female" %>
-    <%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %>
+    <%= f.check_box :is_female, {}, false %> <%= f.label :is_female, "Male" %><br />
   </div>
 
   <div class="field" >
     <%= f.label :date_of_birth %><br />
-    <%= f.date_select(:date_of_birth, start_year: 1940) %>
+    <%= f.date_select(:date_of_birth, start_year: 1940) %><br />
   </div>
+
+
+  <div class="field" >
+    <%= f.label :Bio %> <br />
+    <%= f.text_area :bio, size: '30x20' , autofocus: true, placeholder: 'Write a small bio about yourself' %>
+  </div>
+
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
