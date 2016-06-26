@@ -7,9 +7,9 @@ before_filter :configure_permitted_parameters, if: :devise_controller?
   protected
 
   def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:avatar, :first_name, :last_name, :is_female, :date_of_birth , :email,:password, :password_confirmation, :remember_me)}
+      devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :avatar, :first_name, :last_name, :is_female, :date_of_birth , :email,:password, :password_confirmation, :remember_me)}
       devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :email, :password, :remember_me)}
-     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:bio, :avatar, :fist_name, :last_name, :is_female, :date_of_birth , :email, :github, :facebook, :twitter, :linkedin,  :password, :password_confirmation, :current_password) }
+     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username,:bio, :avatar, :fist_name, :last_name, :is_female, :date_of_birth , :email, :github, :facebook, :twitter, :linkedin,  :password, :password_confirmation, :current_password) }
   end
 
 

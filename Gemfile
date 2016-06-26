@@ -16,6 +16,7 @@ gem 'redcarpet', '~> 3.2.2'
 gem 'pygments.rb', '~> 0.6.0'
 gem 'font-awesome-sass'
 gem 'bootstrap-social-rails'
+gem 'friendly_id', '~> 5.1.0', :require => "friendly_id"
 
 group :development, :test do
   gem 'byebug'
