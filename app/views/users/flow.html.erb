@@ -10,8 +10,19 @@
     </div>
   </div>
   <div class="col-md-8">
-    <%= @user.bio %>
-  </div>
+    You currently have <%= @user.projects.completed.count %> Completed Projects out of <%= @user.projects.count %>.<br />
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<%= percent_completed(@user) %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= percent_completed(@user) %>%;">
+        <%= percent_completed(@user) %> %
+      </div>
+    </div>
+
+    <% @user.projects.random_projects.each do |project| %>
+    <%= link_to project.title , project %>
+    <% end %>
+
+</div>
+
 
 </div>
 

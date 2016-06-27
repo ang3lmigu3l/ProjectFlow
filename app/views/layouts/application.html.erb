@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project FLow</title>
+  <title>Project Flow</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
-     <div class="container">
-       <nav class="navbar navbar-inverse">
-       <div class="container-fluid">
-         <!-- Brand and toggle get grouped for better mobile display -->
-         <div class="navbar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-             <span class="sr-only">Toggle navigation</span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <%= link_to "Project Flow" , root_path, class: "navbar-brand" %>
-         </div>
-
+ <div class="container">
+   <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+     <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+        </button>
+        <%= link_to root_path, class: "navbar-brand" do  %>
+          <%= content_tag(:span ,nil, class: "fa fa-home fa-lg") %>
+        <% end %>
+      </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           <ul class="nav navbar-nav">
-             <% if current_user %>
-             <li class="active"><a href="#">My Flow <span class="sr-only">(current)</span></a></li>
-             <li><%= link_to "New Project", new_project_path %></li>
-             <% end %>
-           </ul>
-           <ul class="nav navbar-nav navbar-right">
-             <li class="dropdown">
-               <!-- if user has avatar pic display it :small  style if not then display default url  -->
-              <% if user_signed_in? %>
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                   <%= image_tag current_user.avatar.url(:small), class: 'default-small' %><span class="caret"></span>
-                 </a>
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav">
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <li class="dropdown">
+             <% if user_signed_in? %>
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                 <i class="fa fa-plus"></i> <span class="caret"></span></a>
                  <ul class="dropdown-menu">
-                   <li><%= link_to "Profile", user_path(current_user)%> </li>
-                   <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-                   <li role="separator" class="divider"></li>
-                   <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-                 </ul>
-              </li>
-              <% else %>
-               <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></li>
-               <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
-             <% end %>
-           </ul>
-         </div><!-- /.navbar-collapse -->
-       </div><!-- /.container-fluid -->
-     </nav>
+                   <li><%= link_to "New Project", new_project_path %></li>
+                </ul>
+          </li>
+            <% end %>
+           <!-- User info  -->
+            <li class="dropdown">
+              <% if user_signed_in? %>
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                 <%= image_tag current_user.avatar.url(:small) %> <span class="caret"></span>
+               </a>
+               <ul class="dropdown-menu">
+                 <li><%= link_to "Profile", user_path(current_user)%> </li>
+                 <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+                 <li role="separator" class="divider"></li>
+                 <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+               </ul>
+            </li>
+            <% else %>
+             <li><%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %></li>
+             <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
+           <% end %>
+         </ul>
+       </div><!-- /.navbar-collapse -->
+     </div><!-- /.container-fluid -->
+   </nav>
      <div class="flash" >
-  <%if flash[:notice] %>
-  <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash[:notice] %>
-  </div>
-  <% elsif flash[:error] %>
-  <div class="alert alert-danger">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash[:error] %>
-  </div>
-  <% elsif flash[:alert] %>
-  <div class="alert alert-warning">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash[:alert] %>
-  </div>
-  <% end %>
-  </div>
+      <%if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+      <% elsif flash[:error] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:error] %>
+      </div>
+      <% elsif flash[:alert] %>
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+      <% end %>
+    </div>
 <%= yield %>
 
   </div>

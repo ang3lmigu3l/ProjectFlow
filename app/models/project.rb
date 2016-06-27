@@ -9,6 +9,10 @@ class Project < ActiveRecord::Base
 
     default_scope {order('date_started DESC')}
 
+    scope :completed, -> {where(completed: true)}
+
+    scope :random_projects, -> {where(completed: false)}
+
     def nil_if_blank
       NULL_ATTRS.each { |attr| self[attr] = nil if self[attr].blank? }
     end
