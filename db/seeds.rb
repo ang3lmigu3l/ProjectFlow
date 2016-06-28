@@ -10,6 +10,7 @@
     User.create!(
       :first_name => Faker::Name.first_name,
       :last_name => Faker::Name.last_name,
+      :username => Faker::Internet.user_name,
       :email => Faker::Internet.email,
       :date_of_birth => Faker::Date.between(10.days.ago, Date.today),
       :password => '12341234',
@@ -20,6 +21,7 @@
   admin = User.create!(
   :first_name => 'Miguel',
   :last_name => 'Quintana',
+  :username => 'ang3lmigu3l',
   :email => 'quintana.mige@gmail.com',
   :date_of_birth => Faker::Date.between(10.days.ago, Date.today),
   :password => '12341234',
@@ -31,7 +33,7 @@
   100.times do
     Project.create!(
     :user => users.sample,
-    :title => Faker::Lorem.words(3),
+    :title => Faker::Lorem.word,
     :description => Faker::Lorem.sentence,
     :body => Faker::Lorem.paragraph(4),
     :completed => false,

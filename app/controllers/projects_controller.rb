@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_action :authenticate_user!, :only => [:create , :new , :edit ]
-  before_action :authorized_user , :only => [:create, :edit , :destroy]
+  before_action :authorized_user , :only => [:edit , :destroy]
 
   def show
     @project = project_params
@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
 
     if @project.destroy
       flash[:notice] = "#{@project.title} was deleted"
-      redirect_to @user
+      redirect_to root_path
     else
       flash[:alert] = "Project was not deleted "
       redirect_to @project_path

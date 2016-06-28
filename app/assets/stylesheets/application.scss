@@ -45,6 +45,22 @@ body {background-color:#fff}
 
 .project-image { width: 50%;}
 
+.suggestion-image {width: 10%
+}
+
+.thumbnail-suggestions {
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+
 
 .thumbnail-links {
    text-align: center;
@@ -129,6 +145,11 @@ body {background-color:#fff}
   text-align: justify;
   margin-top: 15px;
   overflow: auto;
+}
+
+#nav-avatar {
+  width: 20px;
+  height: 20px;
 }
 // index main header
 
