@@ -18,13 +18,18 @@ gem 'font-awesome-sass'
 gem 'bootstrap-social-rails'
 gem 'friendly_id', '~> 5.1.0', :require => "friendly_id"
 
+group :production do
+   gem 'pg'
+   gem 'rails_12factor'
+ end
+
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug'
   gem 'faker', '~> 1.6', '>= 1.6.3'
 end
 
 group :development do
+  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
