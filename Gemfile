@@ -19,6 +19,7 @@ gem 'bootstrap-social-rails'
 gem 'friendly_id', '~> 5.1.0', :require => "friendly_id"
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug'
   gem 'faker', '~> 1.6', '>= 1.6.3'
 end

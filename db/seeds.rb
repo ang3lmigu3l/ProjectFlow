@@ -35,7 +35,7 @@
     :user => users.sample,
     :title => Faker::Lorem.word,
     :description => Faker::Lorem.sentence,
-    :body => Faker::Lorem.paragraph(4),
+    :body => Faker::Lorem.paragraph(7),
     :completed => false,
     :date_started => Faker::Date.between(10.days.ago, Date.today)
 
